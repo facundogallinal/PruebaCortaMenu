@@ -8,5 +8,21 @@ namespace Ucu.Poo.Restaurant
     public class Waiter
     {
         private List<Table> assignedTables = new List<Table>();
+        public string Name { get; set; }
+
+        public void AssignTable(Table table)
+        {
+            this.assignedTables.Add(table);
+        }
+
+        public void TakeOrder(Table table, Dish dish)
+        {
+            table.AddToOrder(dish);
+        }
+
+        public Waiter(string name)
+        {
+            this.Name = name;
+        }
     }
 }
